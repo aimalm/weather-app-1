@@ -1,0 +1,88 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@media only screen and (min-width: 600px) {
+    body{
+        display: flex;
+        flex-direction: column;
+
+        background-image: url("assets/weather-background.jpg");
+        background-size: cover;
+        
+
+        header{
+            margin: auto;
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            background-color: rgba(255, 255, 255, 0.3);
+            
+
+            h1{
+                text-align: center;
+            }
+        }
+
+        nav{
+            display: flex;
+            flex-direction: row;
+            justify-content: stretch;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background-color: rgb(157, 225, 252);
+
+
+            .navbar{
+                width: max-content;
+                margin: auto;
+                padding-left: 15px;
+                padding-right: 15px;
+                
+            }
+
+        }
+
+        .weatherContainer{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            min-height: 500px;
+            
+
+            .leftColumn{
+                background-color: rgba(228, 228, 228, 0.8);
+                width: 15%;
+
+                .cityForm{
+                    display: flex;
+                    flex-direction: column;
+                    margin: auto;
+                    padding-top: 75%;
+
+                    width: 75%;
+                    
+                    label{
+                        margin-bottom: 15px;
+                    }
+                    input{
+                        margin-bottom: 15px;
+                    }
+                }
+            }
+
+            .weatherDisplay{
+                width: 100%;
+
+            }
+        }
+
+        footer{
+            width: 100%;
+            height: 40px;
+
+            background-color: rgb(114, 189, 250);
+        }
+    }
+}

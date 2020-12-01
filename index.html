@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style_mobile.css">
+    <link rel="stylesheet" href="style_computer.css">
+    <title>Weather-App</title>
+</head>
+<body>
+
+    <header>
+        <h1>TRACK UR WEATHER</h1>
+    </header>
+
+    <nav>
+        <div class="navbar" id="navHome">
+            <a href="">Home</a>
+        </div>
+        <div class="navbar" id="navDay">
+            <a href="">Today</a>
+        </div>
+        <div class="navbar" id="navWeek">
+            <a href="">This week</a>
+        </div>
+        <div class="navbar" id="navAlerts">
+            <a href="">Alerts</a>
+        </div>
+    </nav>
+
+    <div class="weatherContainer">
+        <div class="leftColumn">
+            <form class="cityForm" action="" id="location">
+                <label for="cityName">City:</label>
+                <input type="text" id="cityName" name="cityName" placeholder="Enter city" required>
+                <input type="submit" value="Select">
+            </form>
+        </div>
+        <div class="weatherDisplay">
+
+        </div>
+    </div>
+
+    <footer></footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
