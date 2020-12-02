@@ -10,6 +10,8 @@
 
         background-image: url("assets/weather-background.jpg");
         background-size: cover;
+
+        font-family: 'Roboto', sans-serif;
         
 
         header{
@@ -46,34 +48,114 @@
 
         .weatherContainer{
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             width: 100%;
-            min-height: 500px;
+            
             
 
-            .leftColumn{
-                background-color: rgba(228, 228, 228, 0.8);
-                width: 15%;
+            .searchBar{
+                
+                width: 100%;
 
                 .cityForm{
                     display: flex;
                     flex-direction: column;
                     margin: auto;
-                    padding-top: 75%;
+                    padding-top: 30px;
 
-                    width: 75%;
+                    width: 15%;
+                    font-size: 20px;
                     
-                    label{
-                        margin-bottom: 15px;
-                    }
-                    input{
-                        margin-bottom: 15px;
-                    }
+                }
+                input{
+                    width: 100%;
+                    max-width: 280px;
+                    padding: 10px 15px;
+                    border: none;
+                    outline: none;
+                    background-color: rgba(255, 255, 255, 0.5);
+                    border-radius: 15px 0px 15px 0px;
+                    border-bottom: 4px solid #ff0505;
+
+                    font-size: 20px;
+                    font-weight: 300;
+                    transition: 0.2s ease-out;
+
+                    color: #313131;
+                }
+                input:focus{
+                    background-color: rgba(255, 255, 255, 0.8);
+                }
+
+                .location{
+                    color: #fff;
+                    width: 100%;
+                    background-color: rgba(0, 53, 53, 0.5);
+                    font-size: 30px;
+                    font-weight: 800;
+                    margin-top: 15px;
+                    padding: 15px 10px;
+
                 }
             }
 
             .weatherDisplay{
-                width: 100%;
+
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+
+                padding: 50px 40px;
+
+                .day{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    padding: 5px 5px;
+
+                    border-radius: 15px;
+                    box-shadow: 1px 1px rgba(0, 0, 0, 0.7);
+
+                    background-color: rgba(22, 191, 243, 0.7);
+
+                    .weekday{
+                        color: #fff;
+                        font-size: 40px;
+                        font-weight: 800;
+                        padding-bottom: 10px;
+
+                        text-shadow: 2px 3px rgba(0, 0, 0, 0.5);
+
+                    }
+                    .date{
+                        color: #fff;
+                        font-size: 16px;
+
+                        text-shadow: 0px 2px rgba(0, 0, 0, 0.5);
+                    }
+                    .temperature{
+                        color: #fff;
+                        font-size: 80px;
+                        font-weight: 800;
+
+                        margin: 30px 10px;
+
+                        text-shadow: 2px 5px rgba(0, 0, 0, 0.7);
+                        span{
+                            font-weight: 500;
+                        }
+                    }
+                    .weatherStatus{
+                        color: #fff;
+                        font-size: 25px;
+                        font-style: italic;
+
+                        text-shadow: 0px 2px rgba(0, 0, 0, 0.5);
+
+                        margin-bottom: 15px;
+                    }
+                }
 
             }
         }

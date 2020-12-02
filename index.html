@@ -6,6 +6,9 @@
 
     <link rel="stylesheet" href="style_mobile.css">
     <link rel="stylesheet" href="style_computer.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <title>Weather-App</title>
 </head>
 <body>
@@ -30,14 +33,132 @@
     </nav>
 
     <div class="weatherContainer">
-        <div class="leftColumn">
+
+        <div class="searchBar">
+
             <form class="cityForm" action="" id="location">
-                <label for="cityName">City:</label>
-                <input type="text" id="cityName" name="cityName" placeholder="Enter city" required>
-                <input type="submit" value="Select">
+                <input class="searchBox" type="text" id="cityName" autocomplete="off" placeholder="Search for a city..." />
+
+                <div class="location">
+                    Ghent, BE
+                </div>
             </form>
+
         </div>
+
         <div class="weatherDisplay">
+
+            <div class="day day01">
+                <section class="DateLocation">
+                    <div class="weekday realtime01">
+                        Mon
+                    </div>
+                    <div class="date">
+                        31 December 2020
+                    </div>
+                </section>
+
+                <div class="current">
+                    <div class="temperature">21<span>°c</span></div>
+                    <div class="weatherStatus">Sunny</div>
+                </div>
+            </div>
+
+            <div class="day day02">
+                <section class="DateLocation">
+                    <div class="weekday  realtime02">
+                        Tue
+                    </div>
+                    <div class="date">
+                        01 January 2021
+                    </div>
+                </section>
+
+                <div class="current">
+                    <div class="temperature">21<span>°c</span></div>
+                    <div class="weatherStatus">Sunny</div>
+                </div>
+            </div>
+
+            <div class="day day03">
+                <section class="DateLocation">
+                    <div class="weekday realtime03">
+                        Wed
+                    </div>
+                    <div class="date">
+                        02 January 2021
+                    </div>
+                </section>
+
+                <div class="current">
+                    <div class="temperature">21<span>°c</span></div>
+                    <div class="weatherStatus">Sunny</div>
+                </div>
+            </div>
+
+            <div class="day day04">
+                <section class="DateLocation">
+                    <div class="weekday realtime04">
+                        Thu
+                    </div>
+                    <div class="date">
+                        03 January 2021
+                    </div>
+                </section>
+
+                <div class="current">
+                    <div class="temperature">21<span>°c</span></div>
+                    <div class="weatherStatus">Sunny</div>
+                </div>
+            </div>
+
+            <div class="day day05">
+                <section class="DateLocation">
+                    <div class="weekday  realtime05">
+                        Fri
+                    </div>
+                    <div class="date">
+                        04 January 2021
+                    </div>
+                </section>
+
+                <div class="current">
+                    <div class="temperature">21<span>°c</span></div>
+                    <div class="weatherStatus">Sunny</div>
+                </div>
+            </div>
+
+            <div class="day day06">
+                <section class="DateLocation">
+                    <div class="weekday  realtime06">
+                        Sat
+                    </div>
+                    <div class="date">
+                        05 January 2021
+                    </div>
+                </section>
+
+                <div class="current">
+                    <div class="temperature">21<span>°c</span></div>
+                    <div class="weatherStatus">Sunny</div>
+                </div>
+            </div>
+
+            <div class="day day07">
+                <section class="DateLocation">
+                    <div class="weekday  realtime07">
+                        Sun
+                    </div>
+                    <div class="date">
+                        06 January 2021
+                    </div>
+                </section>
+
+                <div class="current">
+                    <div class="temperature">21<span>°c</span></div>
+                    <div class="weatherStatus">Sunny</div>
+                </div>
+            </div>
 
         </div>
     </div>
