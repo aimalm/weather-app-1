@@ -21,10 +21,13 @@
     width: 100%;
     padding-top: 50px;
     padding-bottom: 50px;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(34, 137, 221, 0.3);
   }
   body header h1 {
+    color: #fff;
     text-align: center;
+    font-size: 50px;
+    text-shadow: 5px 4px rgba(0, 0, 0, 0.5);
   }
   body nav {
     display: -webkit-box;
@@ -48,6 +51,9 @@
     margin: auto;
     padding-left: 15px;
     padding-right: 15px;
+  }
+  body nav .navbar a {
+    text-decoration: none;
   }
   body .weatherContainer {
     display: -webkit-box;

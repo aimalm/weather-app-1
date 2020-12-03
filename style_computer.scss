@@ -19,11 +19,15 @@
             width: 100%;
             padding-top: 50px;
             padding-bottom: 50px;
-            background-color: rgba(255, 255, 255, 0.3);
+            background-color: rgba(34, 137, 221, 0.3);
             
 
             h1{
+                color: #fff;
                 text-align: center;
+                font-size: 50px;
+
+                text-shadow: 5px 4px rgba(0, 0, 0, 0.5);
             }
         }
 
@@ -41,6 +45,11 @@
                 margin: auto;
                 padding-left: 15px;
                 padding-right: 15px;
+                
+                
+                a{
+                    text-decoration: none;
+                }
                 
             }
 
