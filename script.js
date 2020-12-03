@@ -7,7 +7,7 @@
         base: "https://api.weatherbit.io/v2.0/forecast/daily"
     }
 
-    
+    // Nessessairy information on days, weekdays, months, year
     let today = new Date();
     let numOfDay = today.getDay();
     let day = today.getDay();
@@ -41,10 +41,11 @@
 
     let the12 = oneOf12[month];
 
-    
+    // Variables for location/searchbox
     const searchBox = document.querySelector('.searchBox');
-
     let city = document.querySelector('.location');
+
+    // Variables for all the times, dates, weatherstatusses of each day
     let day01 = document.querySelector('.realtime01');
     let day02 = document.querySelector('.realtime02');
     let day03 = document.querySelector('.realtime03');
@@ -77,7 +78,9 @@
     let status06 = document.querySelector('.status06');
     let status07 = document.querySelector('.status07');
         
-
+        // Changing innerText weekdays/day
+        // Everytime the numOfDay ads upp +1 on previous day. the % 7 will devide the number once it's over a value of 7 
+        // The difference becomes the new value 
         day01.innerText = week[numOfDay++ % 7];
         day02.innerText = week[numOfDay++ % 7];
         day03.innerText = week[numOfDay++ % 7];
@@ -98,25 +101,35 @@
         date07.innerText = day++ + " " + the12 + " " + year;
     
 
+    // Creating a callback on Keypress
     searchBox.addEventListener('keypress', setQuery);
     
+    // Defining the setQuery callback
     function setQuery(event) {
         
+        // KeyCode == 13 is the value of the "enter"-key on the keyboard
         if (event.keyCode == 13) {
             event.preventDefault();
+
+            // getResult will be the container to the recieved value from the searchBar
             getResults(searchBox.value);
             console.log(searchBox.value);
         }
     }
     
+    // Placing the value from getResult in a local variable called "query"
     function getResults (query) {
 
+        // Getting the API url with the new data implemented
         fetch(api.base + '?city=' + query + '&key=' + api.key)
             .then(weather => {
+
+                // Changing the value into a json format
                 return weather.json();
             })
             .then(displayResults);
     }
+    
     
     function displayResults (weather) {
 
