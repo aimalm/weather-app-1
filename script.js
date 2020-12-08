@@ -24,6 +24,7 @@
 	week[6] = "Sat";
 
     let weekday = week[numOfDay];
+    
 
     let oneOf12 = new Array(12);
     oneOf12[0] = "Jan";
@@ -54,6 +55,17 @@
     let day06 = document.querySelector('.realtime06');
     let day07 = document.querySelector('.realtime07');
 
+    let days = (
+        day01,
+        day02,
+        day03,
+        day04,
+        day05,
+        day06,
+        day07
+    );
+    
+
     let date01 = document.querySelector('.date01');
     let date02 = document.querySelector('.date02');
     let date03 = document.querySelector('.date03');
@@ -61,6 +73,17 @@
     let date05 = document.querySelector('.date05');
     let date06 = document.querySelector('.date06');
     let date07 = document.querySelector('.date07');
+
+    let dates = (
+        date01,
+        date02,
+        date03,
+        date04,
+        date05,
+        date06,
+        date07
+    );
+
 
     let temp01 = document.querySelector('.temp01');
     let temp02 = document.querySelector('.temp02');
@@ -81,24 +104,21 @@
         // Changing innerText weekdays/day
         // Everytime the numOfDay ads upp +1 on previous day. the % 7 will devide the number once it's over a value of 7 
         // The difference becomes the new value 
-        day01.innerText = week[numOfDay++ % 7];
-        day02.innerText = week[numOfDay++ % 7];
-        day03.innerText = week[numOfDay++ % 7];
-        day04.innerText = week[numOfDay++ % 7];
-        day05.innerText = week[numOfDay++ % 7];
-        day06.innerText = week[numOfDay++ % 7];
-        day07.innerText = week[numOfDay++ % 7];
 
+
+        setup = () => {
+
+            days.forEach((day) => {
+                day.innerText = week[numOfDay++ % 7];
+            });
+
+            // TODO: Need to make a functions to separate the even months and uneven months + Feb
+            // after making those into variables, make the 'day' var depending on % (typeOfMonth) operator
+            dates.forEach((date) => {
+                date.innerText = day++ + " " + the12 + " " + year;
+            });
         
-        // TODO:    Need to make a functions to separate the even months and uneven months + Feb
-        //          after making those into variables, make the 'day' var depending on % (typeOfMonth) operator
-        date01.innerText = day++ + " " + the12 + " " + year;
-        date02.innerText = day++ + " " + the12 + " " + year;
-        date03.innerText = day++ + " " + the12 + " " + year;
-        date04.innerText = day++ + " " + the12 + " " + year;
-        date05.innerText = day++ + " " + the12 + " " + year;
-        date06.innerText = day++ + " " + the12 + " " + year;
-        date07.innerText = day++ + " " + the12 + " " + year;
+        };
     
 
     // Creating a callback on Keypress
@@ -137,20 +157,25 @@
         city.innerText = weather.city_name + ', ' + weather.country_code;
 
         temp01.innerHTML = weather.data[0].temp + '<span>°c</span>';
-        temp02.innerHTML = weather.data[1].temp + '<span>°c</span>';
-        temp03.innerHTML = weather.data[2].temp + '<span>°c</span>';
-        temp04.innerHTML = weather.data[3].temp + '<span>°c</span>';
-        temp05.innerHTML = weather.data[4].temp + '<span>°c</span>';
-        temp06.innerHTML = weather.data[5].temp + '<span>°c</span>';
-        temp07.innerHTML = weather.data[6].temp + '<span>°c</span>';
-
         status01.innerHTML = weather.data[0].weather.description;
+
+        temp02.innerHTML = weather.data[1].temp + '<span>°c</span>';
         status02.innerHTML = weather.data[1].weather.description;
+
+        temp03.innerHTML = weather.data[2].temp + '<span>°c</span>';
         status03.innerHTML = weather.data[2].weather.description;
+
+        temp04.innerHTML = weather.data[3].temp + '<span>°c</span>';
         status04.innerHTML = weather.data[3].weather.description;
+
+        temp05.innerHTML = weather.data[4].temp + '<span>°c</span>';
         status05.innerHTML = weather.data[4].weather.description;
+
+        temp06.innerHTML = weather.data[5].temp + '<span>°c</span>';
         status06.innerHTML = weather.data[5].weather.description;
-        status07.innerHTML = weather.data[6].weather.description;
+
+        temp07.innerHTML = weather.data[6].temp + '<span>°c</span>';
+        status06.innerHTML = weather.data[5].weather.description;
 
     };
-    
+
