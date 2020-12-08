@@ -55,7 +55,7 @@
     let day06 = document.querySelector('.realtime06');
     let day07 = document.querySelector('.realtime07');
 
-    let days = (
+    let days = [
         day01,
         day02,
         day03,
@@ -63,7 +63,7 @@
         day05,
         day06,
         day07
-    );
+    ];
     
 
     let date01 = document.querySelector('.date01');
@@ -74,7 +74,7 @@
     let date06 = document.querySelector('.date06');
     let date07 = document.querySelector('.date07');
 
-    let dates = (
+    let dates = [
         date01,
         date02,
         date03,
@@ -82,7 +82,7 @@
         date05,
         date06,
         date07
-    );
+    ];
 
 
     let temp01 = document.querySelector('.temp01');
@@ -93,6 +93,16 @@
     let temp06 = document.querySelector('.temp06');
     let temp07 = document.querySelector('.temp07');
 
+    let temperatures = [
+        temp01,
+        temp02,
+        temp03,
+        temp04,
+        temp05,
+        temp06,
+        temp07
+    ];
+
     let status01 = document.querySelector('.status01');
     let status02 = document.querySelector('.status02');
     let status03 = document.querySelector('.status03');
@@ -100,6 +110,16 @@
     let status05 = document.querySelector('.status05');
     let status06 = document.querySelector('.status06');
     let status07 = document.querySelector('.status07');
+
+    let statusses = [
+        status01,
+        status02,
+        status03,
+        status04,
+        status05,
+        status06,
+        status07
+    ];
         
         // Changing innerText weekdays/day
         // Everytime the numOfDay ads upp +1 on previous day. the % 7 will devide the number once it's over a value of 7 
@@ -119,13 +139,15 @@
             });
         
         };
-    
+
+        setup();
+
 
     // Creating a callback on Keypress
     searchBox.addEventListener('keypress', setQuery);
     
     // Defining the setQuery callback
-    function setQuery(event) {
+    setQuery = (event) => {
         
         // KeyCode == 13 is the value of the "enter"-key on the keyboard
         if (event.keyCode == 13) {
@@ -138,7 +160,7 @@
     }
     
     // Placing the value from getResult in a local variable called "query"
-    function getResults (query) {
+    getResults = (query) => {
 
         // Getting the API url with the new data implemented
         fetch(api.base + '?city=' + query + '&key=' + api.key)
@@ -148,34 +170,26 @@
                 return weather.json();
             })
             .then(displayResults);
+        
+    }
+
+    setDayTemperature = (temperatureElement, statusElement, temperature, weather) => {
+        temperatureElement.innerHTML = temperature + '<span>°c</span>';
+        statusElement.innerHTML = weather;
     }
     
     
-    function displayResults (weather) {
+    displayResults = (weather) => {
 
         console.log(weather);
         city.innerText = weather.city_name + ', ' + weather.country_code;
 
-        temp01.innerHTML = weather.data[0].temp + '<span>°c</span>';
-        status01.innerHTML = weather.data[0].weather.description;
-
-        temp02.innerHTML = weather.data[1].temp + '<span>°c</span>';
-        status02.innerHTML = weather.data[1].weather.description;
-
-        temp03.innerHTML = weather.data[2].temp + '<span>°c</span>';
-        status03.innerHTML = weather.data[2].weather.description;
-
-        temp04.innerHTML = weather.data[3].temp + '<span>°c</span>';
-        status04.innerHTML = weather.data[3].weather.description;
-
-        temp05.innerHTML = weather.data[4].temp + '<span>°c</span>';
-        status05.innerHTML = weather.data[4].weather.description;
-
-        temp06.innerHTML = weather.data[5].temp + '<span>°c</span>';
-        status06.innerHTML = weather.data[5].weather.description;
-
-        temp07.innerHTML = weather.data[6].temp + '<span>°c</span>';
-        status06.innerHTML = weather.data[5].weather.description;
+        for (let i = 0; i< temperatures.length; i++) {
+          const temperature = temperatures[i];
+          const status = statusses[i];
+        
+          setDayTemperature(temperature, status, weather.data[i].temp, weather.data[i].weather.description);
+        }
 
     };
 
