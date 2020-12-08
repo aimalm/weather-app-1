@@ -1,6 +1,5 @@
 
 const api = {
-    
     // Weatherbit.io api
     key: "34c33b6048084591b3ee34570df09b7e",
     base: "https://api.weatherbit.io/v2.0/forecast/daily"
@@ -117,21 +116,21 @@ let statusses = [
     status07
 ];
     
-    // Changing innerText weekdays/day
-    // Everytime the numOfDay ads upp +1 on previous day. the % 7 will devide the number once it's over a value of 7 
-    // The difference becomes the new value 
-    setup = () => {
+// Changing innerText weekdays/day
+// Everytime the numOfDay ads upp +1 on previous day. the % 7 will devide the number once it's over a value of 7 
+// The difference becomes the new value 
+setup = () => {
 
-        days.forEach((day) => {
-            day.innerText = week[numOfDay++ % 7];
-        });
+    days.forEach((day) => {
+        day.innerText = week[numOfDay++ % 7];
+    });
 
-        dates.forEach((date) => {
-            date.innerText = day++ + " " + the12 + " " + year;
-        });
-    
-    };
-    setup();
+    dates.forEach((date) => {
+        date.innerText = day++ + " " + the12 + " " + year;
+    });
+
+};
+setup();
 
 // Creating a callback on Keypress
 searchBox.addEventListener('keypress', setQuery);
