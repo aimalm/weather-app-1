@@ -132,9 +132,6 @@ setup = () => {
 };
 setup();
 
-// Creating a callback on Keypress
-searchBox.addEventListener('keypress', setQuery);
-
 // Defining the setQuery callback
 setQuery = (event) => {
     
@@ -145,8 +142,12 @@ setQuery = (event) => {
         // getResult will be the container to the recieved value from the searchBar
         getResults(searchBox.value);
         console.log(searchBox.value);
-    }
+    };
 }
+
+// Creating a callback on Keypress
+searchBox.addEventListener('keypress', setQuery);
+
 
 // Placing the value from getResult in a local variable called "query"
 getResults = (query) => {
